@@ -58,4 +58,36 @@ app.use((err, req, res) => {
   res.status(err.status || 500).json({message: 'server error'})
 });
 
+// Image upload
+import "./App.css"  // NEED TO CHANGE TO OUR CSS
+import { useState, useEffect } from "react"; 
+import { storage } from "firebase.js";
+import { ref, uploadBytes, listAll } from "firebase/storage";
+import { v4 } from "uuid"
+
+function App() {
+  // Send file to Firebase
+  const [imageUpload, setImageUpload] = useState(null); // State 
+  const [imageList, setImageList] = useState([]);
+  const uploadImage = () => {
+    if (imageUpload == null) return;
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    uploadBytes(imageRef, imageUpload).then(() => {
+      alert("Image uploaded")
+    })
+  };
+
+  useEffect(() => {
+    listAll()
+  }, [])
+
+  return (
+     <div className="App">
+      <input type="file" onChange={(event) => {setImageUpload(event.target.files[0])}}></input> 
+      <button onClick={uploadImage}>Upload Image</button>
+     </div>
+     
+  )
+}
+
 module.exports = app;
