@@ -24,7 +24,7 @@ import './App.css'
 // IMPORT: Image upload end 
 
 const App = () => {
-  const [imageUpload, setImageUpload] = useState(null); // State 
+  const [imageUpload, setImageUpload] = useState(null); 
   const [imageList, setImageList] = useState([]);
   const imageListRef = ref(storage, "images/")
   const uploadImage = () => {
@@ -45,13 +45,12 @@ const App = () => {
        })
       })
     })
-  
   }, [])
     return (
       <>
         <div className="App">
-          <input type="file" onChange={(event) => {setImageUpload(event.target.files[0])}}></input> 
-           <button onClick={uploadImage}>Upload Image</button>
+          <input id="img-file" type="file" onChange={(event) => {setImageUpload(event.target.files[0])}}></input> 
+           <button id="img-upload-btn" onClick={uploadImage}>Upload Image</button>
             {imageList.map((url) => { 
             return <img id="uploaded-photo" src={url}/>
           })}

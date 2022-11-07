@@ -11,3 +11,13 @@
     width: 300px;
     margin: 10px;
   }
+
+  #img-upload-btn {
+      width: auto;
+      height: 50px;
+  }
+
+  #img-file {
+      width: auto;
+      height: 50px;
+  }
