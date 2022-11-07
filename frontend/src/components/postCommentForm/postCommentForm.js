@@ -1,3 +1,4 @@
+// not in use yet
 import { useState } from 'react';
 
 export default function PostForm() {
@@ -34,8 +35,8 @@ export default function PostForm() {
   // Actual JSX
   return (
     <div className="form-container">
-      <form className="create-message-form" onSubmit={handleSubmit}>
-        <label for="text-box">Write your message here:</label>
+      <form className="create-comment-form" onSubmit={handleSubmit}>
+        <label for="text-box">Write your cooment here:</label>
         <input
           type="text"
           className="text-box"
