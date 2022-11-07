@@ -20,6 +20,7 @@ import {
   listAll,
 } from "firebase/storage";
 import { v4 } from "uuid"
+import './App.css'
 // IMPORT: Image upload end 
 
 const App = () => {
@@ -52,7 +53,7 @@ const App = () => {
           <input type="file" onChange={(event) => {setImageUpload(event.target.files[0])}}></input> 
            <button onClick={uploadImage}>Upload Image</button>
             {imageList.map((url) => { 
-            return <img src={url}/>
+            return <img id="uploaded-photo" src={url}/>
           })}
       </div>
 
