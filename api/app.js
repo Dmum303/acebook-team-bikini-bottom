@@ -58,13 +58,15 @@ app.use((err, req, res) => {
   res.status(err.status || 500).json({message: 'server error'})
 });
 
-// Image upload
-import "./App.css"  // NEED TO CHANGE TO OUR CSS
+// IMPORT: Image upload start
+import "frontend/src/index.css"  // May be duplicated 
 import { useState, useEffect } from "react"; 
 import { storage } from "firebase.js";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid"
+// IMPORT: Image upload end 
 
+// Image upload code start - added to app code, may need to be a route instead
 function App() {
   // Send file to Firebase
   const [imageUpload, setImageUpload] = useState(null); // State 
@@ -104,5 +106,5 @@ function App() {
   )
 }
 
-// Add CSS to format images
+// Image upload code end 
 module.exports = app;
