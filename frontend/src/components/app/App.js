@@ -11,10 +11,14 @@ import {
 } from "react-router-dom";
 
 // IMPORT: Image upload start
-import "frontend/src/index.css"  // May be duplicated 
 import { useState, useEffect } from "react"; 
-import { storage } from "firebase.js";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { storage } from "./firebase.js";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+} from "firebase/storage";
 import { v4 } from "uuid"
 // IMPORT: Image upload end 
 
@@ -51,7 +55,7 @@ const App = () => {
             return <img src={url}/>
           })}
       </div>
-      
+
         <Routes>
           <Route path='/posts'  element={<Feed navigate={ useNavigate() }/>}/>
           <Route path='/login'  element={<LoginForm  navigate={ useNavigate() }/>}/>
