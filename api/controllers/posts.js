@@ -22,6 +22,8 @@ const PostsController = {
       firstName: req.session.user.firstName 
     }
 
+    
+
     const post = new Post(input);
     post.save(async (err) => {
       if (err) {

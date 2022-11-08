@@ -55,3 +55,4 @@ const Feed = ({ navigate }) => {
 };
 
 export default Feed;
+

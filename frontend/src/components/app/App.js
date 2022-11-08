@@ -22,7 +22,7 @@ import {
 import { v4 } from "uuid"
 // IMPORT: Image upload end 
 
-const App = () => {
+const imageApp = () => {
   const [imageUpload, setImageUpload] = useState(null); 
   const [imageList, setImageList] = useState([]);
   const imageListRef = ref(storage, "images/")
