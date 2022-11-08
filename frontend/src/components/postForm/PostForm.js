@@ -14,7 +14,7 @@ export default function PostForm (props) {
   // Feed already resets the token for us.
   const token = window.localStorage.getItem("token");
 
-
+// Image upload starts here
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrls, setImageUrls] = useState([]);
   
@@ -74,9 +74,9 @@ export default function PostForm (props) {
           value={message}
           required
           />
-        <button
+        {/* <button
           className='signup-form-btn'
-          >Add Post</button> 
+          >Add Post</button>  */}
           {/* Image app starts here */}
       <div className="imageApp">
        <input
@@ -85,7 +85,7 @@ export default function PostForm (props) {
             setImageUpload(event.target.files[0]);
           }}
         />
-      <button id="upload-img-btn" onClick={uploadFile}> Upload Image</button>
+      <button id="upload-post-img-btn" onClick={uploadFile}> Add Post</button>
         {imageUrls.map((url) => {
         return <img className="uploaded-img" src={url} />;
       })}
