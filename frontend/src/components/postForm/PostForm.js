@@ -3,7 +3,7 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
-  listAll,
+  listAll
 } from "firebase/storage";
 import { storage } from "./firebase";
 import { v4 } from "uuid";
@@ -14,29 +14,7 @@ export default function PostForm (props) {
   // Feed already resets the token for us.
   const token = window.localStorage.getItem("token");
 
-  const handleSubmit = async (error) => {
-    error.preventDefault() // Prevents default action of refreshing the page
 
-    const response = await fetch('/posts/', {
-      method: 'post',
-      body: JSON.stringify({message}),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      }
-    })
-    const json = await response.json()
-    if (!response.ok) {
-      console.log('Message couldnt send', json)
-    }
-    if (response.ok) {
-      // If form sent successfully then it resets the input field.
-      setMessage('')
-      props.reload()
-    }
-  }
-
-  function imageApp() {
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUrls, setImageUrls] = useState([]);
   
@@ -61,6 +39,28 @@ export default function PostForm (props) {
       });
     }, []);
 
+  const handleSubmit = async (error) => {
+    error.preventDefault() // Prevents default action of refreshing the page
+
+    const response = await fetch('/posts/', {
+      method: 'post',
+      body: JSON.stringify({message}),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
+    })
+    const json = await response.json()
+    if (!response.ok) {
+      console.log('Message couldnt send', json)
+    }
+    if (response.ok) {
+      // If form sent successfully then it resets the input field.
+      setMessage('')
+      props.reload()
+    }
+  }
+
   // Actual JSX
   return (
     <div className="form-container">
@@ -77,6 +77,7 @@ export default function PostForm (props) {
         <button
           className='signup-form-btn'
           >Add Post</button> 
+          {/* Image app starts here */}
       <div className="imageApp">
        <input
           type="file"
@@ -89,8 +90,7 @@ export default function PostForm (props) {
         return <img className="uploaded-img" src={url} />;
       })}
       </div>    
-
       </form>
     </div>
   )
-}}
+}
