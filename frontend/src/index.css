@@ -275,8 +275,8 @@ body {
   flex-direction: column;
 }
 
-#uploaded-img {
-  width: 300px;
+.uploaded-img {
+  width: 250px;
   margin: 10px;
 }
 
