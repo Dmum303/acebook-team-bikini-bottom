@@ -14,7 +14,15 @@ const PostsController = {
   },
   // create new post
   Create: (req, res) => {
-    const post = new Post(req.body);
+    const input = {
+      message: req.body.message,
+      email: req.session.user.email,
+      imageAddress: req.body.imageAddress,
+      profilePicture: req.session.user.url, 
+      firstName: req.session.user.firstName 
+    }
+
+    const post = new Post(input);
     post.save(async (err) => {
       if (err) {
         throw err;

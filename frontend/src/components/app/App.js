@@ -20,7 +20,6 @@ import {
   listAll,
 } from "firebase/storage";
 import { v4 } from "uuid"
-import './App.css'
 // IMPORT: Image upload end 
 
 const App = () => {
