@@ -266,3 +266,16 @@ body {
 .post-card {
   margin: 5px;
 }
+
+.imageApp {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#uploaded-img {
+  width: 300px;
+  margin: 10px;
+}
