@@ -5,6 +5,7 @@ import React from 'react';
 import Feed from '../feed/Feed';
 import TestSignUp from '../signupForm/SignUpForm';
 import CommentForm from '../postCommentForm/CommentForm';
+import imageApp from '../image/image';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/test" element={<TestSignUp />} />
         {/* This is a test path for testing individual components and should be removed in production.*/}
         <Route path="/comment" element={<CommentForm />} />
+        <Route path="/image" element={<imageApp />} />
         {/* This is a test path for testing individual components and should be removed in production.*/}
       </Routes>
     </>
