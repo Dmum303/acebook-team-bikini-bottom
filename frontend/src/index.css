@@ -378,3 +378,21 @@ body {
   margin: 10px;
   width: 300px;
 }
+
+.logout-btn {
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: #4c66a4;
+  border-radius: var(--border-radius);
+  
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+

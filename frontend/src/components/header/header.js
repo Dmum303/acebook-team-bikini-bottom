@@ -10,9 +10,11 @@ export default function Header({ navigate }) {
         <li id="sitename">
           <a href="/login">Acebook</a>
         </li>
-        <button onClick={logout}>
-          Logout <i className="fa-solid fa-right-from-bracket"></i>
-        </button>
+        <li>
+          <p class='logout-btn' onClick={logout}>
+            Logout <i className="fa-solid fa-right-from-bracket"></i>
+          </p>
+        </li>
       </div>
     </div>
   );
