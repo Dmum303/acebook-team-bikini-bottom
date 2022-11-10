@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import Post from '../post/Post';
-import PostForm from '../postForm/PostForm';
-import LikeButton from '../likeButton/LikeButton';
-import FriendsBar from '../friends/FriendsBar'
+import React, { useEffect, useState } from "react";
+import Post from "../post/Post";
+import PostForm from "../postForm/PostForm";
+import FriendsBar from "../friends/FriendsBar";
+import Header from "../header/header";
 
 const Feed = ({ navigate }) => {
   const [posts, setPosts] = useState([]);
-  const [token, setToken] = useState(window.localStorage.getItem('token'));
+  const [token, setToken] = useState(window.localStorage.getItem("token"));
 
   const reload = () => {
     if (token) {
-      fetch('/posts', {
+      fetch("/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
         .then((response) => response.json())
         .then(async (data) => {
-          window.localStorage.setItem('token', data.token);
-          setToken(window.localStorage.getItem('token'));
+          window.localStorage.setItem("token", data.token);
+          setToken(window.localStorage.getItem("token"));
           setPosts(data.posts);
         });
     }
@@ -28,44 +28,27 @@ const Feed = ({ navigate }) => {
     reload();
   }, []);
 
-  const logout = () => {
-    window.localStorage.removeItem('token');
-    navigate('/login');
-  };
-
   if (token) {
     return (
       <>
-        <div id="header_wrapper">
-          <div id="header">
-            <li id="sitename">
-              <a href="/login">Acebook</a>
-            </li>
-            <button onClick={logout}>
-              Logout <i className="fa-solid fa-right-from-bracket"></i>
-            </button>
-          </div>
-        </div>
+        <Header navigate={ navigate } />
         <div id="wrapper">
           <h2>Feed</h2>
           <FriendsBar />
-          <PostForm reload={ reload }/>
-          <div id="feed" role="feed">
+          <main>
+            <PostForm reload={reload} />
             <br></br>
-            {posts
-              .slice(0)
-              .reverse()
-              .map((post) => (
-                <div class="post-card-container">
-                  <Post post={post} key={post._id} />
-                </div>
-              ))}
-          </div>
+            {posts.reverse().map((post) => (
+              <div class="post-card-container">
+                <Post post={post} key={post._id} />
+              </div>
+            ))}
+          </main>
         </div>
       </>
     );
   } else {
-    navigate('/signin');
+    navigate("/signin");
   }
 };
 
