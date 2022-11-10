@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "../post/Post";
-import PostForm from "../postForm/PostForm";
-import FriendsBar from "../friends/FriendsBar";
 import Header from "../header/header";
+import FormBar from "../formBar/Formbar";
 
 const Feed = ({ navigate }) => {
   const [posts, setPosts] = useState([]);
@@ -31,12 +30,10 @@ const Feed = ({ navigate }) => {
   if (token) {
     return (
       <>
-        <Header navigate={ navigate } />
+        <Header navigate={ navigate } title={ 'feed' }/>
         <div id="wrapper">
-          <h2>Feed</h2>
-          <FriendsBar />
+          <FormBar reload={ reload }/>
           <main>
-            <PostForm reload={reload} />
             <br></br>
             {posts.reverse().map((post) => (
               <div class="post-card-container">
