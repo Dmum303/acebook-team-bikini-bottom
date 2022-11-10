@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Post from '../post/Post';
 import PostForm from '../postForm/PostForm';
-import CommentForm from '../postCommentForm/CommentForm';
 import LikeButton from '../likeButton/LikeButton';
+import FriendsBar from '../friends/FriendsBar'
 
 const Feed = ({ navigate }) => {
   const [posts, setPosts] = useState([]);
@@ -48,7 +48,8 @@ const Feed = ({ navigate }) => {
         </div>
         <div id="wrapper">
           <h2>Feed</h2>
-          <PostForm reload={reload} />
+          <FriendsBar />
+          <PostForm reload={ reload }/>
           <div id="feed" role="feed">
             <br></br>
             {posts
