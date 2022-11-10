@@ -4,8 +4,8 @@ import PostForm from "../postForm/PostForm";
 export default function FormBar({ reload }) {
   return (
     <div className="form-bar">
-      <PostForm />
-      <FriendsBar reload={ reload }/>
+      <PostForm reload={ reload }/>
+      <FriendsBar />
     </div>
   );
 }
