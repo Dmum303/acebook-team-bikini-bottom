@@ -78,13 +78,7 @@ body {
   height: 25px;
   padding-left: 3px;
 }
-#header form input[type='submit'] {
-  height: 25px;
-  margin-top: 20px;
-  background-color: #084b8a;
-  color: white;
-  border: 1px solid #08298a;
-}
+
 #wrapper {
   margin: 0 auto;
   padding: 0px;
@@ -382,17 +376,65 @@ body {
 .logout-btn {
   cursor: pointer;
   padding: 0.4rem;
+  transition: 0.3s;
 }
 
 .logout-btn:hover {
   background-color: white;
   color: #4c66a4;
   border-radius: var(--border-radius);
-  
+  transition: 0s;
 }
 
 #header {
   display: flex;
   justify-content: space-between;
+  min-height: 50px;
 }
 
+.feed-title {
+  font-size: 30px;
+}
+
+#header_wrapper {
+  margin-bottom: 10px;
+}
+
+#wrapper {
+  display: flex;
+}
+
+.form-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-message-form {
+  margin-bottom: 3px;
+}
+
+.login-btn {
+  transition: 0.3s;
+  
+}
+
+.login-btn:hover {
+  color: #4c66a4;
+  transition: 0s;
+}
+
+#header form input[type='submit'] {
+  height: 25px;
+  margin-top: 20px;
+  background-color: #084b8a;
+  color: white;
+  border: 1px solid #08298a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#header form input[type='submit']:hover {
+  background-color: white;
+  color: #084b8a;
+  transition: 0s;
+}
