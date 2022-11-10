@@ -3,6 +3,7 @@ import './Post.css';
 // import '../postComment/PostComment.js';
 import CommentForm from '../postCommentForm/CommentForm';
 import Comment from '../postComment/PostComment.js';
+import LikeButton from '../likeButton/LikeButton';
 
 const Post = ({ post, reload }) => {
   const [show, setShow] = useState(true);
@@ -16,6 +17,7 @@ const Post = ({ post, reload }) => {
         <button onClick={() => setShow(!show)}>Toggle Comments</button>
         <img src={post.imageUrls} alt="post-img" margin="20" width="300" />
         <br></br>
+        <LikeButton postId={post._id} />
         {show ? (
           <div id="hideComments">
             <CommentForm postId={post._id} reload={reload} />

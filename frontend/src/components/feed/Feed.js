@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Post from '../post/Post';
 import PostForm from '../postForm/PostForm';
+import LikeButton from '../likeButton/LikeButton';
 import FriendsBar from '../friends/FriendsBar'
 
 const Feed = ({ navigate }) => {
@@ -51,11 +52,14 @@ const Feed = ({ navigate }) => {
           <PostForm reload={ reload }/>
           <div id="feed" role="feed">
             <br></br>
-            {posts.map((post) => (
-              <div class='post-card-container'>
-                <Post post={post} key={post._id} />
-              </div>
-            ))}
+            {posts
+              .slice(0)
+              .reverse()
+              .map((post) => (
+                <div class="post-card-container">
+                  <Post post={post} key={post._id} />
+                </div>
+              ))}
           </div>
         </div>
       </>
