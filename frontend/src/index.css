@@ -438,3 +438,7 @@ body {
   color: #084b8a;
   transition: 0s;
 }
+
+.post-card {
+  margin-bottom: 4px;
+}

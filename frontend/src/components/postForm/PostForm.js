@@ -35,10 +35,12 @@ export default function PostForm(props) {
   }, []);
 
   const handleSubmit = async (error) => {
-    error.preventDefault(); // Prevents default action of refreshing the page
+    error.preventDefault()
+    
+    console.log('here are the imageURls', imageUrls)
     const response = await fetch('/posts', {
       method: 'post',
-      body: JSON.stringify({ message: message, imageUrls: imageUrls[imageUrls.length -1] }),
+      body: JSON.stringify({ message: message, imageUrls: imageUrls[imageUrls.length - 1] }),
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + token,

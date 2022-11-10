@@ -15,7 +15,7 @@ const Post = ({ post, reload }) => {
         {post.message}
         <br></br>
         <button onClick={() => setShow(!show)}>Toggle Comments</button>
-        <img src={post.imageUrls} alt="post-img" margin="20" width="300" />
+        <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
         <br></br>
         <LikeButton postId={post._id} />
         {show ? (
