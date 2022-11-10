@@ -1,4 +1,4 @@
-export default function Header({ navigate }) {
+export default function Header({ navigate, title }) {
   const logout = () => {
     window.localStorage.removeItem("token");
     navigate("/login");
@@ -9,6 +9,9 @@ export default function Header({ navigate }) {
       <div id="header">
         <li id="sitename">
           <a href="/login">Acebook</a>
+        </li>
+        <li>
+          <h2 className='feed-title'>{ title }</h2>
         </li>
         <li>
           <p class='logout-btn' onClick={logout}>
