@@ -36,10 +36,9 @@ export default function PostForm(props) {
 
   const handleSubmit = async (error) => {
     error.preventDefault(); // Prevents default action of refreshing the page
-
     const response = await fetch('/posts', {
       method: 'post',
-      body: JSON.stringify({ message: message, imageUrls: imageUrls }),
+      body: JSON.stringify({ message: message, imageUrls: imageUrls[imageUrls.length -1] }),
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + token,
