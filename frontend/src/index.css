@@ -443,6 +443,17 @@ body {
   margin-bottom: 4px;
 }
 
+.btn-group {
+  flex: 1;
+  flex-direction: 'row';
+  align-items: flex-end;
+  width: 30%;
+  /* background-color: black; */
+  /* margin-left: 20;
+  margin-right: 20;
+  margin-top: 5; */
+}
+
 /* .choose-file {
   margin-top: 0.5rem;
   margin-bottom: 0;
