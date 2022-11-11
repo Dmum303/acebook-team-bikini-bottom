@@ -80,7 +80,7 @@ export default function PostForm(props) {
             setImageUpload(event.target.files[0]);
           }}
         />
-        <button id="upload-post-img-btn" onClick={uploadFile}>
+        <button className="upload-post-img-btn" onClick={uploadFile}>
           Add Post
         </button>
       </form>

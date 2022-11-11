@@ -40,7 +40,7 @@ export default function FriendsForm (props) {
           onChange={(e) => setFriend(e.target.value)}
           value={friend}
         />
-        <button className='friends-form-btn btn'>Add</button>
+        <button className='friends-form-btn'>Add Friend</button>
       </form>
     </div>
   )
