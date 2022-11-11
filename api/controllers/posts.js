@@ -11,7 +11,6 @@ const PostsController = {
       
     }).populate('poster').exec()
     .then(async posts => {
-      console.log(posts);
       const token = await TokenGenerator.jsonwebtoken(req.user_id);
       res.status(200).json({ posts: posts, token: token })});
   },
