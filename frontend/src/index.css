@@ -214,7 +214,6 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  position: fixed;
   bottom: 0;
 }
 #footer1 {
@@ -330,10 +329,22 @@ body {
   height: 1.5rem;
 }
 
+.comment-text-box {
+  width: 635px;
+  height: 4rem;
+}
+
 .signup-form-container, .friends-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.comment-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
 }
 
 .friends-card-container {
@@ -363,10 +374,16 @@ body {
   background-color: white;
   border-radius: var(--border-radius);
   padding: var(--padding);
+  width: 680px;
+}
+
+.post-form-container {
+  margin: 10px;
+  width: 680px;
 }
 
 .form-container, .post-card-container {
-  margin: 0px;
+  margin: 10px;
 }
 .uploaded-img {
   margin: 10px;
@@ -382,6 +399,20 @@ body {
 .logout-btn:hover {
   background-color: white;
   color: #4c66a4;
+  border-radius: var(--border-radius);
+  transition: 0s;
+}
+
+.comment-btn {
+  cursor: pointer;
+  margin: 10px;
+  padding: 0.4rem;
+  transition: 0.3s;
+}
+
+.comment-btn:hover {
+  background-color: #4c66a4;
+  color: white;
   border-radius: var(--border-radius);
   transition: 0s;
 }
