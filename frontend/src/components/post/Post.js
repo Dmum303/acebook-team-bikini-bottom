@@ -16,12 +16,11 @@ const Post = ({ post, reload }) => {
         <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
         {post.message}
         <br></br>
-        <button onClick={() => setShow(!show)}>Toggle Comments</button>
+        {/* <button onClick={() => setShow(!show)}>Comments</button> */}
         
         <br></br>
-        <LikeButton postId={post._id} />
         {show ? (
-          <div id="hideComments">
+          <div className="form-container">
             <CommentForm postId={ post._id } reload={ reload } />
             <br></br>
             {post.comments
@@ -32,6 +31,9 @@ const Post = ({ post, reload }) => {
               ))}
           </div>
         ) : null}
+      <br></br>
+      <LikeButton postId={post._id} />
+      <button onClick={() => setShow(!show)}><i class="fa-regular fa-comments"></i> Comments </button>
       </article>
     </div>
   );
