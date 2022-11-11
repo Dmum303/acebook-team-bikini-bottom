@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Post.css';
 // import '../postComment/PostComment.js';
 import CommentForm from '../postCommentForm/CommentForm';
@@ -11,8 +11,7 @@ const Post = ({ post, reload }) => {
   return (
     <div class="post-card">
       <article data-cy="post" key={post._id}>
-        <br></br>
-        <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
+        <img src={post.image} alt="post-img" margin="20" width="680" />
         {post.message}
         <br></br>
         <button onClick={() => setShow(!show)}>Toggle Comments</button>

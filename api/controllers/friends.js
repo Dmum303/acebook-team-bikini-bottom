@@ -33,7 +33,6 @@ const FriendsController = {
   GetFriends: async (req, res) => {
     let user = await User.findById(req.user_id).populate('friends')
     let friends = await user.friends;
-    console.log('There are the friends', friends)
     const token = await TokenGenerator.jsonwebtoken(req.user_id);
     res.status(200).json({ friends: friends, token: token });
   }
