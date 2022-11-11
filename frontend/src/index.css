@@ -306,7 +306,7 @@ body {
   font-weight: bold;
 }
 
-.btn {
+.friends-form-btn, .upload-post-img-btn {
   margin-top: 0.5rem;
   margin-bottom: 0;
   background-color: #00a400;
@@ -442,3 +442,61 @@ body {
 .post-card {
   margin-bottom: 4px;
 }
+
+.btn-group {
+  flex: 1;
+  flex-direction: 'row';
+  align-items: flex-end;
+  width: 30%;
+  /* background-color: black; */
+  /* margin-left: 20;
+  margin-right: 20;
+  margin-top: 5; */
+}
+
+/* .choose-file {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  border-color: #04bf04;
+  color: white;
+  border-radius: var(--border-radius);
+  min-height: 2.2rem;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100px;
+  /* cursor: ; */
+
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: 'Photo/Video';
+    display: inline-block;
+    color: black;
+    /* display: none; */
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  input[type=file]{
+    color:transparent;
+   }
+  input[type=file]:after {
+       color: #000;
+       content:"";
+   }

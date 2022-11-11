@@ -63,7 +63,6 @@ export default function PostForm(props) {
   // Actual JSX
   return (
     <div class="post-card-container">
-      {/* <div className="form-container"> */}
       <form className="create-message-form form" onSubmit={handleSubmit}>
         <label htmlFor="text-box">New Message</label>
         <input
@@ -74,15 +73,18 @@ export default function PostForm(props) {
           value={message}
           required
         />
-        <input
+        
+        <div className="btn-group">
+        <input className='custom-file-input' asp-for="FileToUpload" id="form-control"
           type="file"
           onChange={(event) => {
             setImageUpload(event.target.files[0]);
           }}
         />
-        <button id="upload-post-img-btn" onClick={uploadFile}>
+        <button className="upload-post-img-btn" onClick={uploadFile}>
           Add Post
         </button>
+        </div>
       </form>
     </div>
   );
