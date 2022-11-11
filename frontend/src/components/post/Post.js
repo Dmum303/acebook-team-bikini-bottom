@@ -11,6 +11,7 @@ const Post = ({ post, reload }) => {
   return (
     <div class="post-card">
       <article data-cy="post" key={post._id}>
+        <h1>{post.poster.firstName} {post.poster.lastName}</h1>
         <br></br>
         <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
         {post.message}
