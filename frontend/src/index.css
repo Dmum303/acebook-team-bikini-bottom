@@ -442,3 +442,8 @@ body {
 .post-card {
   margin-bottom: 4px;
 }
+
+.pfp-img {
+  margin-top: 4px;
+  margin-bottom: -3px;
+}
