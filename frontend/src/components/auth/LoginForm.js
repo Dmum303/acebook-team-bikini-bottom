@@ -61,6 +61,7 @@ const LogInForm = ({ navigate }) => {
             id="submit"
             type="submit"
             value="Submit"
+            className='login-btn'
           />
         </form>
       </div>
