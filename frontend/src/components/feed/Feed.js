@@ -35,9 +35,9 @@ const Feed = ({ navigate }) => {
           <FormBar reload={ reload }/>
           <main>
             <br></br>
-            {posts.reverse().map((post) => (
+            {posts.slice(0).reverse().map((post) => (
               <div class="post-card-container">
-                <Post post={post} key={post._id} />
+                <Post post={post} key={post._id} reload={ reload } />
               </div>
             ))}
           </main>

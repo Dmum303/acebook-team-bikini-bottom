@@ -7,7 +7,6 @@ export default function CommentForm(props) {
   const [message, setMessage] = useState('');
   // Feed already resets the token for us.
   const token = window.localStorage.getItem('token');
-  const tempId = '636932d263ba38502efa92d1';
   const handleSubmit = async (error) => {
     error.preventDefault(); // Prevents default action of refreshing the page
 
@@ -29,6 +28,7 @@ export default function CommentForm(props) {
     if (response.ok) {
       // If form sent successfully then it resets the input field.
       setMessage('');
+      props.reload();
     }
   };
 

@@ -6,6 +6,7 @@ import { v4 } from 'uuid';
 export default function PostForm(props) {
   // Component state
   const [message, setMessage] = useState('');
+  const [hasImage, setHasImage] = useState(false);
   // Feed already resets the token for us.
   const token = window.localStorage.getItem('token');
 
@@ -15,6 +16,7 @@ export default function PostForm(props) {
 
   const imagesListRef = ref(storage, 'images/');
   const uploadFile = () => {
+    setHasImage(true);
     if (imageUpload == null) return;
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
@@ -53,6 +55,7 @@ export default function PostForm(props) {
     if (response.ok) {
       // If form sent successfully then it resets the input field.
       setMessage('');
+      setImageUpload(null);
       props.reload();
     }
   };

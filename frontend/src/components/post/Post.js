@@ -12,15 +12,16 @@ const Post = ({ post, reload }) => {
     <div class="post-card">
       <article data-cy="post" key={post._id}>
         <br></br>
+        <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
         {post.message}
         <br></br>
         <button onClick={() => setShow(!show)}>Toggle Comments</button>
-        <img src={post.imageUrls} alt="post-img" margin="20" width="680" />
+        
         <br></br>
         <LikeButton postId={post._id} />
         {show ? (
           <div id="hideComments">
-            <CommentForm postId={post._id} reload={reload} />
+            <CommentForm postId={ post._id } reload={ reload } />
             <br></br>
             {post.comments
               .slice(0)
