@@ -4,7 +4,7 @@ export default function FriendCard (props) {
   return (
     <div className='friend-card'>
       <div className="friend-picture">
-        <img src='https://nickelodeonuniverse.com/wp-content/uploads/Spongebob.png' alt="" height='100' width='100' />
+        <img class='pfp-img' src='https://avatarfiles.alphacoders.com/152/152177.jpg' alt="" height='100' width='100' />
       </div>
       <div className="friend-name-container">
         <p className='friend-name'>{friend.firstName + ' ' + friend.lastName}</p>
